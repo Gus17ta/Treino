@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"> </div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecario">
+        <img src="./img/Minha.jpg" alt="foto-perfio">
+        <h1>Gustavo Brito</h1>
+        <p class="cabecario-sub-titulo">Desenvolvedor Front End Estagiario</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quam laboriosam
+                repellendus itaque, at beatae esse! Laborum, molestias deserunt tempora, sapiente iste suscipit
+                delectus, facere illum necessitatibus dolore debitis nisi?</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-nao-tem-ainda">
+                <img src="./img/p2(para o portifolio).jpg" alt="projeto1" class=projetos-imagem>
+                <div class="texto-projetos">
+                    <h3 class="info-projetos">(titulo projeto 1)</h3>
+                    <p class="paragrafo-projetos">sub titulo ou descrição projeto</p>
+                </div>
+            </div>
+            <div class="projetos-nao-tem-ainda">
+                <img src="./img/download.jpg" alt="projeto2" class=projetos-imagem>
+                <div class="texto-projetos">
+                    <h3 class="info-projetos">(titulo projeto 2)</h3>
+                    <p class="paragrafo-projetos">sub titulo ou descrição projeto</p>
+                </div>
+            </div>
+            <div class="projetos-nao-tem-ainda">
+                <img src="./img/p1(para o portifolio).webp" alt="projeto3" class=projetos-imagem>
+                <div class="texto-projetos"></div>
+                <h3 class="info-projetos">(titulo projeto 3)</h3>
+                <p class="paragrafo-projetos">sub titulo ou descrição projeto</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo"> Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhas(event)">
+            <div class="grupo-form">
+                <input placeholder="nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" row="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar para Whatsapp</button>
+
+        </form>
+    </section>
+
+    <script>
+        function enviarWhas(event) {
+            event.preventeDefault()
+
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511932247711'
+
+            const texto = 'Olá! Me chamo ${nome}, ${mensagem}'
+            const msgFormatada = encodeURIComponent(texto)
+            const url ='https://wa.me/${telefone}?text=${msgFormada}'
+
+            window.open(url, '_blank')
+
+        }
+
+    </script>
+
+</body>
+
+</html>
